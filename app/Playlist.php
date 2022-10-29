@@ -9,11 +9,11 @@ class OK_Caps_Playlist{
     }
 
 
-    function add_meta_box() {
+    public function add_meta_box() {
         add_meta_box( 'ok-caps-playlist', 'Shortcode', array($this,'metabox_callback'), 'vdp_playlist','side' );
     }
 
-    function metabox_callback( $post ) {
+    public function metabox_callback( $post ) {
         if($post->post_status !== 'auto-draft'){
             echo '[VO_PLAYER id='.$post->ID.']';
         }else{
@@ -21,9 +21,6 @@ class OK_Caps_Playlist{
         }
     }
     
-
-
-
 
     public function register_scripts(){
         wp_register_style( OK_CAPS_NAME, OK_CAPS_URL.'public/app.css',[],OK_CAPS_VERSION );

@@ -23,6 +23,8 @@ define( 'OK_CAPS_VERSION', '1.0.3' );
 define( 'OK_CAPS_NAME', 'vo-demo-player' );
 define( 'OK_CAPS_URL', plugin_dir_url( __FILE__ ) );
 define( 'OK_CAPS_PATH', plugin_dir_path( __FILE__ ) );
+
+define( 'OK_CAPS_ACF_SHOW', 0);
 define( 'OK_CAPS_ACF_PATH', plugin_dir_path(__FILE__) . '/includes/acf/' );
 define( 'OK_CAPS_ACF_URL', plugin_dir_url(__FILE__) . '/includes/acf/' );
 

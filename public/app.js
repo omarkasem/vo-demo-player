@@ -74,11 +74,19 @@
 
             $(obj).css('strokeDashoffset', dash);
 
-				
+			
 			if (dash === 0 && audioObj[0].paused === true) {
+				var current_box = $(el).parents('.boxsounds');
+                if($(current_box).attr('play_next') != '1'){
+                    $(el).find('.controls').click();
+                    $(el).parents('.single_audio').removeClass('active_audio');
+                    return false;
+                }
+
+				var current_box_id = $(el).parents('.boxsounds').attr("id");
+
 				var boxes = _.getAllBoxes();
-				var current_box = $(el).parents('.boxsounds').attr("id");
-   				var next_div = boxes[boxes.indexOf(current_box)+1];
+   				var next_div = boxes[boxes.indexOf(current_box_id)+1];
 				
  				var other_audio = $('#'+next_div).find('.controls');
 				if(other_audio.length > 0){
@@ -210,7 +218,6 @@
                         obj.playObj.attr('class', 'playable paused');
                         obj.activeAudio[0].pause();
                         $(audioId).off('timeupdate');
-// 						obj.activeAudio[0].currentTime = 0;
                         break;
                     case 'paused':
                         obj.playObj.attr('class', 'playable playing');
@@ -258,10 +265,9 @@
 			if($(element).parents('.boxsounds').attr('id') != myid){
 				$(element)[0].currentTime = 0;
 			}
-			
 		});
-		$('.boxsounds__box').removeClass('active_audio');
-		$(this).parents('.boxsounds__box').addClass('active_audio');
+		$('.single_audio').removeClass('active_audio');
+		$(this).parents('.single_audio').addClass('active_audio');
 	});
 	
 	

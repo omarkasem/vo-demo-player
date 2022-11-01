@@ -81,6 +81,7 @@
                 if($(current_box).attr('play_next') != 1){
                     $(el).find('.controls').click();
                     $(el).parents('.single_audio').removeClass('active_audio');
+                    $(el).parents('.single_audio').find('.precache-bar,.progress-bar').attr('style','');
                     return false;
                 }
                 
@@ -95,8 +96,10 @@
 					other_audio.click();
 				}else{
 					$(el).find('.controls').click();
+                    $(el).parents('.single_audio').removeClass('active_audio');
 				}
-				
+
+				$(el).parents('.single_audio').find('.precache-bar,.progress-bar').attr('style','');
 			}
 
         },
@@ -263,12 +266,15 @@
 	
 	$('.mediPlayer').on('click',function(){
 		var myid = $(this).parents('.single_audio').attr('id');
-		$.each($('.listen'),function(index,element){
+        var container = $(this).parents('.boxsounds');
+		$.each($('.listen',container),function(index,element){
 			if($(element).parents('.single_audio').attr('id') != myid){
 				$(element)[0].currentTime = 0;
-                $(element).parents('.single_audio').find('.precache-bar').attr('style','');
 			}
 		});
+        $('.single_audio',container).not($(this).parents('.single_audio')).find('.precache-bar,.progress-bar').attr('style','');
+
+
 		$('.single_audio').removeClass('active_audio');
 		$(this).parents('.single_audio').addClass('active_audio');
 	});

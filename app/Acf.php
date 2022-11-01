@@ -83,7 +83,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#FFFFFF',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -121,7 +121,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#B4B4B5',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -159,7 +159,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#B4B4B5',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -197,7 +197,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#B4B4B5',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -232,7 +232,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#0F0F0F',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -250,7 +250,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#2E2E2E',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -268,7 +268,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#4A4A4A',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -286,7 +286,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#FFFFFF',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -304,7 +304,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#FFFFFF',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -322,7 +322,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#939393',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -357,7 +357,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#1C1C1C',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -375,7 +375,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#5D4C2E',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -393,7 +393,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#DCAD54',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -411,7 +411,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#DCAD54',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -429,7 +429,7 @@ class OK_Caps_Acf{
                         'id' => '',
                     ),
                     'default_value' => '#DCAD54',
-                    'enable_opacity' => 0,
+                    'enable_opacity' => 1,
                     'return_format' => 'string',
                 ),
                 array(
@@ -573,6 +573,7 @@ class OK_Caps_Acf{
             'description' => '',
             'show_in_rest' => 0,
         ));
+        
         
 
     }

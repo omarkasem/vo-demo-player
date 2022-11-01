@@ -64,7 +64,7 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
         ?>
         <!-- Single box -->
         <div id="single_<?php echo $i; ?>" class="single_audio" style="border-bottom: 1px solid <?php echo get_field('border_color',$post_id); ?>;">
-            <div style="display: flex;align-items: center;justify-content: space-between;padding:20px;">
+            <div style="display: flex;align-items: center;justify-content: space-between;padding: 15px 20px;">
                 <div style="display: flex;align-items: flex-start;">
                     <div class="mediPlayer">
                         <audio class="listen" preload="none" data-size="60" src="<?php echo $track['url']; ?>"></audio>

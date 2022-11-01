@@ -70,7 +70,9 @@
     visibility: visible;
     opacity: 1;
 }
-
+.mediPlayer svg{
+    max-width:unset;
+}
 @media (min-width: 992px) {
     .boxsounds {
         width: 100%;

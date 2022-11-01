@@ -77,15 +77,17 @@
 			
 			if (dash === 0 && audioObj[0].paused === true) {
 				var current_box = $(el).parents('.boxsounds');
-                if($(current_box).attr('play_next') != '1'){
+                
+                if($(current_box).attr('play_next') != 1){
                     $(el).find('.controls').click();
                     $(el).parents('.single_audio').removeClass('active_audio');
                     return false;
                 }
-
-				var current_box_id = $(el).parents('.boxsounds').attr("id");
-
-				var boxes = _.getAllBoxes();
+                
+				var current_box_id = $(el).parents('.single_audio').attr("id");
+                
+				var boxes = _.getAllBoxes(current_box);
+                
    				var next_div = boxes[boxes.indexOf(current_box_id)+1];
 				
  				var other_audio = $('#'+next_div).find('.controls');
@@ -99,9 +101,9 @@
 
         },
 		
-		getAllBoxes: function (){
+		getAllBoxes: function (current_box){
 			var boxes = [];
-			$.each($('.boxsounds'),function(index,elm){
+			$.each($('.single_audio',current_box),function(index,elm){
 				boxes.push($(elm).attr("id"));
 			});
 			return boxes;
@@ -260,10 +262,11 @@
     $('.mediPlayer').mediaPlayer();
 	
 	$('.mediPlayer').on('click',function(){
-		var myid = $(this).parents('.boxsounds').attr('id');
+		var myid = $(this).parents('.single_audio').attr('id');
 		$.each($('.listen'),function(index,element){
-			if($(element).parents('.boxsounds').attr('id') != myid){
+			if($(element).parents('.single_audio').attr('id') != myid){
 				$(element)[0].currentTime = 0;
+                $(element).parents('.single_audio').find('.precache-bar').attr('style','');
 			}
 		});
 		$('.single_audio').removeClass('active_audio');

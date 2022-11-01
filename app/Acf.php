@@ -433,8 +433,8 @@ class OK_Caps_Acf{
                     'return_format' => 'string',
                 ),
                 array(
-                    'key' => 'field_635caa7656c25',
-                    'label' => 'SETTINGS',
+                    'key' => 'field_635caabc92373',
+                    'label' => 'TRACKS',
                     'name' => '',
                     'aria-label' => '',
                     'type' => 'tab',
@@ -468,23 +468,6 @@ class OK_Caps_Acf{
                     'ui' => 0,
                     'ui_on_text' => '',
                     'ui_off_text' => '',
-                ),
-                array(
-                    'key' => 'field_635caabc92373',
-                    'label' => 'TRACKS',
-                    'name' => '',
-                    'aria-label' => '',
-                    'type' => 'tab',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'placement' => 'top',
-                    'endpoint' => 0,
                 ),
                 array(
                     'key' => 'field_635caac892374',
@@ -590,6 +573,7 @@ class OK_Caps_Acf{
             'description' => '',
             'show_in_rest' => 0,
         ));
+        
 
     }
 

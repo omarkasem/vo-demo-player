@@ -7,7 +7,9 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
 
 <style>
     #un_<?php echo $post_id; ?> .progress-track,
-    #un_<?php echo $post_id; ?> .precache-bar{
+    #un_<?php echo $post_id; ?> .precache-bar,
+    #un_<?php echo $post_id; ?> .progress-bar
+    {
         stroke:<?php echo get_field('circle_color',$post_id); ?>;
     }
     #un_<?php echo $post_id; ?> .mediPlayer:hover .progress-track,
@@ -17,7 +19,7 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
     }
 
     #un_<?php echo $post_id; ?> .play polygon{
-        fill:<?php echo get_field('play_triangle_color',$post_id);; ?>;
+        fill:<?php echo get_field('play_triangle_color',$post_id); ?>;
     }
 
     /* Active */
@@ -57,11 +59,11 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
 
         <?php 
             $tracks = get_field('tracks',$post_id);
-            if(!empty($tracks)){
-                foreach($tracks as $track){
+            if(!empty($tracks)){ $i=0;
+                foreach($tracks as $track){ $i++;
         ?>
         <!-- Single box -->
-        <div class="single_audio" style="border-bottom: 1px solid <?php echo get_field('border_color',$post_id); ?>;">
+        <div id="single_<?php echo $i; ?>" class="single_audio" style="border-bottom: 1px solid <?php echo get_field('border_color',$post_id); ?>;">
             <div style="display: flex;align-items: center;justify-content: space-between;padding:20px;">
                 <div style="display: flex;align-items: flex-start;">
                     <div class="mediPlayer">
@@ -78,11 +80,11 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
                     </div>
                 </div>
 
-                <div style="display: flex;align-items: center;    flex: 0 0 20%;">
+                <div style="display: flex;align-items: center;flex: 0 0 20%;">
                     <p class="audio_duration" style="font-family:'<?php echo $time_font_and_size[0]; ?>';font-size:<?php echo $time_font_and_size[1]; ?>px;padding:0;margin:0;line-height: 1.4;color:<?php echo get_field('time_color',$post_id); ?>">
                         
                     </p>
-                    <a class="download_icon tooltip" style="display: block;margin-left: 20px;" href="<?php echo $url; ?>" download>
+                    <a class="download_icon tooltip" style="display: block;margin-left: 20px;" href="<?php echo $track['url']; ?>" download>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="<?php echo get_field('download_icon_color',$post_id); ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5" />
                         </svg>

@@ -73,6 +73,11 @@
 .mediPlayer svg{
     max-width:unset;
 }
+
+.boxsounds__box .single_audio:last-child{
+    border-bottom: none!important;
+}
+
 @media (min-width: 992px) {
     .boxsounds {
         width: 100%;

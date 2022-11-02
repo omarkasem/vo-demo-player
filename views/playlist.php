@@ -71,10 +71,10 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
                     </div>
 
                     <div style="margin-left:20px;">
-                        <p class="title" style="font-family:'<?php echo $title_font_and_size[0]; ?>';font-size:<?php echo $title_font_and_size[1]; ?>px;font-weight: 600;padding:0;margin-bottom: 4px;line-height: 1.4;margin-top: 0;color:<?php echo get_field('title_color',$post_id); ?>">
+                        <p class="title" style="padding:0;font-family:'<?php echo $title_font_and_size[0]; ?>';font-size:<?php echo $title_font_and_size[1]; ?>px;font-weight: 600;padding:0;margin-bottom: 4px;line-height: 1.4;margin-top: 0;color:<?php echo get_field('title_color',$post_id); ?>">
                             <?php echo $track['title']; ?>
                         </p>
-                            <p class="desc" style="font-family:'<?php echo $desc_font_and_size[0]; ?>';font-size:<?php echo $desc_font_and_size[1]; ?>px;margin:0;line-height: 1.4;color:<?php echo get_field('desc_color',$post_id); ?>">
+                            <p class="desc" style="padding:0;font-family:'<?php echo $desc_font_and_size[0]; ?>';font-size:<?php echo $desc_font_and_size[1]; ?>px;margin:0;line-height: 1.4;color:<?php echo get_field('desc_color',$post_id); ?>">
                                 <?php echo $track['description']; ?>
                             </p>
                     </div>

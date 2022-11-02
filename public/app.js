@@ -150,7 +150,7 @@
                 '<circle class="precache-bar" cx="50" cy="50" r="47.45" stroke="#302F32" stroke-opacity="0.25" stroke-linecap="round" fill="none" stroke-width="5" transform="rotate(-90 50 50)"/>',
                 '<circle class="progress-bar" cx="50" cy="50" r="47.45" stroke="#ce4668" stroke-opacity="1" stroke-linecap="round" fill="none" stroke-width="5" transform="rotate(-90 50 50)"/>',
                 '</g>',
-                '<circle class="controls" cx="50" cy="50" r="45" stroke="none" fill="#ce4668" opacity="0.0" pointer-events="all"/>',
+                '<circle class="controls" cx="50" cy="50" r="70" stroke="none" fill="#ce4668" opacity="0.0" pointer-events="all"/>',
                 '<g class="control pause">',
                 '<line x1="40" y1="35" x2="40" y2="65" stroke="#ce4668" fill="none" stroke-width="8" stroke-linecap="round"/>',
                 '<line x1="60" y1="35" x2="60" y2="65" stroke="#ce4668" fill="none" stroke-width="8" stroke-linecap="round"/>',
@@ -194,9 +194,9 @@
             lunar = {};
 
             _.settings = $.extend({}, _.defaults, options);
-
+            console.log(_.settings.controlsObj);
             $(_.settings.controlsObj).on('click', function (e) {
-				
+
 
                 var el = $(e.currentTarget).closest($(_.settings.thisSelector));
 
@@ -265,6 +265,7 @@
     $('.mediPlayer').mediaPlayer();
 	
 	$('.mediPlayer').on('click',function(){
+
 		var myid = $(this).parents('.single_audio').attr('id');
         var container = $(this).parents('.boxsounds');
 		$.each($('.listen',container),function(index,element){

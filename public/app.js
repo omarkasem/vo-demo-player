@@ -305,7 +305,7 @@
     }
 
 
-    $.each($('.boxsounds__box'),function(index,elem){
+    $.each($('.single_audio'),function(index,elem){
         getDuration($(this).find('audio').attr('src'),function(dur){
             $(elem).find('.audio_duration').html(format(dur));
         },elem);

@@ -34,6 +34,10 @@ class OK_Caps_Playlist{
         ob_start();
         $post_id = $atts['id'];
 
+        if(get_field('google_font_name',$post_id)){
+            wp_enqueue_style( 'vo-demo-player-gfonts-'.$post_id, 'https://fonts.googleapis.com/css2?family='.get_field('google_font_name',$post_id).'&display=swap', false );
+        }
+
         include(OK_CAPS_PATH . 'views/playlist.php');
         $html = ob_get_contents();
         ob_end_clean();

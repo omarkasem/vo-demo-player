@@ -61,9 +61,10 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
             $tracks = get_field('tracks',$post_id);
             if(!empty($tracks)){ $i=0;
                 foreach($tracks as $track){ $i++;
+                    $single_id = 'single_'.$post_id.'_'.$i;
         ?>
         <!-- Single box -->
-        <div id="single_<?php echo $i; ?>" class="single_audio" style="border-bottom: 1px solid <?php echo get_field('border_color',$post_id); ?>;">
+        <div id="<?php echo $single_id; ?>" class="single_audio" style="border-bottom: 1px solid <?php echo get_field('border_color',$post_id); ?>;">
             <div style="display: flex;align-items: center;justify-content: space-between;padding: 15px 20px;">
                 <div style="display: flex;align-items: flex-start;">
                     <div class="mediPlayer">

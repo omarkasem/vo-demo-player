@@ -51,6 +51,23 @@ class OK_Caps_Acf{
                         'endpoint' => 0,
                     ),
                     array(
+                        'key' => 'field_637553617437e',
+                        'label' => 'Google fonts Name',
+                        'name' => 'google_font_name',
+                        'aria-label' => '',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                    ),
+                    array(
                         'key' => 'field_635ca924f3a1c',
                         'label' => 'Title Font and Size',
                         'name' => 'title_font_and_size',
@@ -577,11 +594,8 @@ class OK_Caps_Acf{
             ));
             
             endif;		
-        
-        
 
     }
-
 
 }
 

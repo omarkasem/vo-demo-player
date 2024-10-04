@@ -230,17 +230,22 @@
                     case 'ended':
                         obj.playObj.attr('class', 'not-started playable');
                         obj.activeAudio.off('timeupdate', _.reportPosition);
+                        obj.activeAudio[0].pause(); // Ensure the audio is paused
+                        obj.activeAudio[0].currentTime = 0; // Reset the audio to the start
                         break;
                 }
             });
 
-            $(_.defaults.audioObj).on('progress', function (e) {
-                if (this.buffered.length > 0) {
-                    var end = this.buffered.end(this.buffered.length - 1);
-                    var cache = $(e.currentTarget).parent().find(_.settings.precache),
-                        el    = $(this).closest($(_.settings.thisSelector));
-                    _.setGraphValue(cache, end, el);
-                }
+            $(_.defaults.audioObj).on('ended', function () {
+                var el = $(this).closest($(_.settings.thisSelector));
+                var obj = {
+                    el: el,
+                    activeAudio: el.find(_.settings.audioObj),
+                    playObj: el.find('[data-play]')
+                };
+                obj.playObj.attr('class', 'not-started playable');
+                obj.activeAudio[0].pause(); // Ensure the audio is paused
+                obj.activeAudio[0].currentTime = 0; // Ensure the audio resets to the start
             });
 
         }

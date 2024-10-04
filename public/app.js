@@ -37,7 +37,6 @@
 
     lunar.className = function (elem, name) {
         elem.attr('class', name);
-        console.log('className', elem);
     };
 
     return lunar;
@@ -194,7 +193,7 @@
             lunar = {};
 
             _.settings = $.extend({}, _.defaults, options);
-            console.log(_.settings.controlsObj);
+
             $(_.settings.controlsObj).on('click', function (e) {
 
 

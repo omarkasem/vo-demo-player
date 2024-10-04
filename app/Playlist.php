@@ -24,7 +24,7 @@ class OK_Caps_Playlist{
 
     public function register_scripts(){
         wp_register_style( OK_CAPS_NAME, OK_CAPS_URL.'public/app.css',[],OK_CAPS_VERSION );
-        wp_register_script( OK_CAPS_NAME, OK_CAPS_URL.'public/app.js',array('jquery'),OK_CAPS_VERSION );
+        wp_register_script( OK_CAPS_NAME, OK_CAPS_URL.'public/app.js',array('jquery'),OK_CAPS_VERSION,true );
     }
 
     public function shortcode($atts){

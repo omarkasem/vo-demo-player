@@ -3,6 +3,15 @@ $title_font_and_size = explode(',',get_field('title_font_and_size',$post_id));
 $desc_font_and_size = explode(',',get_field('desc_font_and_size',$post_id));
 $time_font_and_size = explode(',',get_field('time_font_and_size',$post_id));
 $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
+
+// Get the layout type, grid rows number, and size
+$layout_type = get_field('type', $post_id);
+$grid_rows_number = get_field('grid_rows_number', $post_id);
+$size = get_field('size', $post_id);
+
+// Define scaling factors for the small size
+$small_scale = get_field('small_scale',$post_id); // Adjust this value to make elements smaller or larger
+$small_padding = 10; // Reduced padding for small size
 ?>
 
 <style>
@@ -56,10 +65,63 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
     }
     
 
+<?php if ($layout_type === 'Grid'): ?>
+#un_<?php echo $post_id; ?> .boxsounds__box {
+    display: grid;
+    grid-template-columns: repeat(<?php echo $grid_rows_number; ?>, 1fr);
+    gap: <?php echo $size === 'Small' ? '10px' : '20px'; ?>;
+}
+
+#un_<?php echo $post_id; ?> .single_audio {
+    border: 1px solid <?php echo get_field('border_color',$post_id); ?>;
+    border-radius: <?php echo $size === 'Small' ? '6px' : '8px'; ?>;
+}
+<?php endif; ?>
+
+<?php if ($size === 'Small'): ?>
+#un_<?php echo $post_id; ?> .single_audio > div {
+    padding: <?php echo $small_padding; ?>px !important;
+}
+
+#un_<?php echo $post_id; ?> .mediPlayer svg {
+    width: <?php echo 60 * $small_scale; ?>px !important;
+    height: <?php echo 60 * $small_scale; ?>px !important;
+}
+
+#un_<?php echo $post_id; ?> .title {
+    font-size: <?php echo 20 * $small_scale; ?>px !important;
+}
+
+#un_<?php echo $post_id; ?> .desc,
+#un_<?php echo $post_id; ?> .audio_duration {
+    font-size: <?php echo 16 * $small_scale; ?>px !important;
+}
+
+#un_<?php echo $post_id; ?> .download_icon svg {
+    width: <?php echo 24 * $small_scale; ?>px;
+    height: <?php echo 24 * $small_scale; ?>px;
+}
+
+#un_<?php echo $post_id; ?> .tooltiptext {
+    font-size: <?php echo 8 * $small_scale; ?>px !important;
+}
+
+#un_<?php echo $post_id; ?> .single_audio > div > div:first-child {
+    margin-right: <?php echo 20 * $small_scale; ?>px;
+}
+
+#un_<?php echo $post_id; ?> .single_audio > div > div:last-child {
+    flex: 0 0 <?php echo 20 * $small_scale; ?>%;
+}
+
+#un_<?php echo $post_id; ?> .download_icon {
+    margin-left: <?php echo 20 * $small_scale; ?>px !important;
+}
+<?php endif; ?>
 </style>
 
-<div id="un_<?php echo $post_id; ?>" class="boxsounds" play_next="<?php echo get_field('play_next_track',$post_id); ?>"> 
-    <div class="boxsounds__box " style="background: <?php echo get_field('background_color',$post_id); ?>;">
+<div id="un_<?php echo $post_id; ?>" class="boxsounds <?php echo $size === 'Small' ? 'small-size' : ''; ?>" play_next="<?php echo get_field('play_next_track',$post_id); ?>"> 
+    <div class="boxsounds__box" style="background: <?php echo get_field('background_color',$post_id); ?>;">
 
         <?php 
             $tracks = get_field('tracks',$post_id);
@@ -68,8 +130,8 @@ $popup_font_and_size = explode(',',get_field('popup_font_and_size',$post_id));
                     $single_id = 'single_'.$post_id.'_'.$i;
         ?>
         <!-- Single box -->
-        <div id="<?php echo $single_id; ?>" class="single_audio" style="border-bottom: 1px solid <?php echo get_field('border_color',$post_id); ?>;">
-            <div style="display: flex;align-items: center;justify-content: space-between;padding: 15px 20px;">
+        <div id="<?php echo $single_id; ?>" class="single_audio" <?php echo $layout_type === 'full width' ? 'style="border-bottom: 1px solid ' . get_field('border_color',$post_id) . ';"' : ''; ?>>
+            <div style="display: flex;align-items: center;justify-content: space-between;padding: <?php echo $size === 'Small' ? $small_padding : '15'; ?>px <?php echo $size === 'Small' ? $small_padding : '20'; ?>px;">
                 <div style="display: flex;align-items: flex-start;">
                     <div class="mediPlayer">
                         <audio class="listen" preload="none" data-size="60" src="<?php echo $track['url']; ?>"></audio>

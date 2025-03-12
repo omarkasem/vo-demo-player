@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VO Demo Player
  * Description: Customizable audio player with download option.
- * Version:     1.1.1
+ * Version:     1.1.2
  * Author:      Voice Acting 101 
  * Author URI: https://voiceacting101.com/demo-player/
  * License:     GPL v3
@@ -15,12 +15,12 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 
-define( 'OK_CAPS_VERSION', '1.1.1' );
+define( 'OK_CAPS_VERSION', '1.1.2' );
 define( 'OK_CAPS_NAME', 'vo-demo-player' );
 define( 'OK_CAPS_URL', plugin_dir_url( __FILE__ ) );
 define( 'OK_CAPS_PATH', plugin_dir_path( __FILE__ ) );
 
-define( 'OK_CAPS_ACF_SHOW', 0);
+define( 'OK_CAPS_ACF_SHOW', 1);
 define( 'OK_CAPS_ACF_PATH', plugin_dir_path(__FILE__) . '/includes/acf/' );
 define( 'OK_CAPS_ACF_URL', plugin_dir_url(__FILE__) . '/includes/acf/' );
 

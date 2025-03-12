@@ -165,6 +165,28 @@ class OK_Caps_Acf{
                         'prepend' => '',
                         'append' => '',
                     ),
+
+                    array(
+                        'key' => 'field_670dc90d4aa56',
+                        'label' => 'Small Scale For Player',
+                        'name' => 'small_scale_for_player',
+                        'aria-label' => '',
+                        'type' => 'number',
+                        'instructions' => '',
+                        'required' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '0.6',
+                        'min' => '',
+                        'max' => '',
+                        'placeholder' => '',
+                        'step' => '',
+                        'prepend' => '',
+                        'append' => '',
+                    ),
                     array(
                         'key' => 'field_635ca8e7f3a1a',
                         'label' => 'FONTS',

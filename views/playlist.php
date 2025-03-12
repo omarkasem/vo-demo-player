@@ -12,6 +12,7 @@ $size = get_field('size', $post_id);
 // Define scaling factors for the small size
 $small_scale = get_field('small_scale',$post_id); // Adjust this value to make elements smaller or larger
 $small_padding = 10; // Reduced padding for small size
+$small_scale_for_player = (get_field('small_scale_for_player',$post_id) > 0) ? get_field('small_scale_for_player',$post_id) : 1;
 ?>
 
 <style>
@@ -113,10 +114,6 @@ $small_padding = 10; // Reduced padding for small size
     padding: <?php echo $small_padding; ?>px !important;
 }
 
-#un_<?php echo $post_id; ?> .mediPlayer svg {
-    width: <?php echo 60 * $small_scale; ?>px !important;
-    height: <?php echo 60 * $small_scale; ?>px !important;
-}
 
 #un_<?php echo $post_id; ?> .title {
     font-size: <?php echo 20 * $small_scale; ?>px !important;
@@ -148,6 +145,11 @@ $small_padding = 10; // Reduced padding for small size
     margin-left: <?php echo 20 * $small_scale; ?>px !important;
 }
 <?php endif; ?>
+
+#un_<?php echo $post_id; ?> .mediPlayer svg {
+    width: <?php echo 60 * $small_scale_for_player; ?>px !important;
+    height: <?php echo 60 * $small_scale_for_player; ?>px !important;
+}
 </style>
 
 <div id="un_<?php echo $post_id; ?>" class="boxsounds <?php echo $size === 'Small' ? 'small-size' : ''; ?>" play_next="<?php echo get_field('play_next_track',$post_id); ?>"> 

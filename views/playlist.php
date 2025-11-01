@@ -174,20 +174,20 @@ $small_scale_for_player = (get_field('small_scale_for_player',$post_id) > 0) ? g
                             <?php echo $track['title']; ?>
                         </p>
 
-                        <?php if($layout_type === 'Vertical'): ?>
+                        <?php //if($layout_type === 'Vertical'): ?>
                             <p class="desc" style="padding:0;font-family:'<?php echo $desc_font_and_size[0]; ?>';font-size:<?php echo $desc_font_and_size[1]; ?>px;margin:0;line-height: 1.4;color:<?php echo get_field('desc_color',$post_id); ?>">
                                 <?php echo $track['description']; ?>
                             </p>
-                        <?php endif; ?>
+                        <?php //endif; ?>
                     </div>
                 </div>
 
                 <div style="display: flex;align-items: center;flex: 0 0 20%;">
-                    <?php if($layout_type === 'Vertical'): ?>
+                    <?php //if($layout_type === 'Vertical'): ?>
                         <p class="audio_duration" style="font-family:'<?php echo $time_font_and_size[0]; ?>';font-size:<?php echo $time_font_and_size[1]; ?>px;padding:0;margin:0;line-height: 1.4;color:<?php echo get_field('time_color',$post_id); ?>">
                             
                         </p>
-                    <?php endif; ?>
+                    <?php //endif; ?>
                     <a class="download_icon tooltip" style="display: block;margin-left: 20px;opacity:1;" href="<?php echo $track['url']; ?>" download>
 
                     <?php if($layout_type === 'Horizontal'){ ?>
